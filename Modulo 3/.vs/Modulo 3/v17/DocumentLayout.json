@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Algoritmos I\\Modulo 3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|E:\\Algoritmos I\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|solutionrelative:MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE574970-9F90-456F-AB65-13B5374ECC97}|Actividad5\\Actividad5.vcxproj|E:\\Algoritmos I\\Modulo 3\\Actividad5\\Actividad5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FE574970-9F90-456F-AB65-13B5374ECC97}|Actividad5\\Actividad5.vcxproj|solutionrelative:Actividad5\\Actividad5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MiPropioAVL.cpp",
+              "DocumentMoniker": "E:\\Algoritmos I\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
+              "RelativeDocumentMoniker": "MiPropioAVL\\MiPropioAVL.cpp",
+              "ToolTip": "E:\\Algoritmos I\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
+              "RelativeToolTip": "MiPropioAVL\\MiPropioAVL.cpp",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAACAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-08T03:19:34.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Actividad5.cpp",
+              "DocumentMoniker": "E:\\Algoritmos I\\Modulo 3\\Actividad5\\Actividad5.cpp",
+              "RelativeDocumentMoniker": "Actividad5\\Actividad5.cpp",
+              "ToolTip": "E:\\Algoritmos I\\Modulo 3\\Actividad5\\Actividad5.cpp",
+              "RelativeToolTip": "Actividad5\\Actividad5.cpp",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAAAEAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-04T22:18:19.771Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
