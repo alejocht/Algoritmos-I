@@ -17,6 +17,60 @@ struct nodo
     }
 };
 
+int obtenerAltura(nodo* nodo)
+{
+    return nodo ? nodo->altura : 0;
+}
+
+int obtenerBalance(nodo* nodo)
+{
+    //balance mayor a -1, desbalanceado hacia la derecha
+    //balance mayor a 1, desbalanceado hacia la izquierda
+    //balance entre 1 y -1 es aceptable
+    return nodo ? obtenerAltura(nodo->izquierdo) - obtenerAltura(nodo->derecho) : 0;
+}
+
+nodo* encontrarSucesor(nodo* raiz)
+{
+    nodo* sucesor = raiz->izquierdo;
+    while (sucesor != nullptr)
+    {
+        sucesor = sucesor->derecho;
+    }
+    return sucesor;
+}
+
+nodo* rotarDerecha(nodo* raiz)
+{
+    nodo* x = raiz->izquierdo;
+    nodo* t = x->derecho;
+    
+    x->derecho = raiz;
+    raiz->izquierdo = t;
+
+    //al ser rotados hay que cambiar la altura para mantener las propiedades del AVL
+
+    x->altura = 1 + max(obtenerAltura(x->derecho), obtenerAltura(x->izquierdo));
+    raiz->altura = 1 + max(obtenerAltura(raiz->derecho), obtenerAltura(raiz->izquierdo));
+
+    return x;
+}
+
+nodo* rotarIzquierda(nodo* raiz)
+{
+    nodo* x = raiz->derecho;
+    nodo* t = x->izquierdo;
+
+    x->izquierdo = raiz;
+    raiz->derecho = t;
+
+    //al ser rotados hay que cambiar la altura para mantener las propiedades del AVL
+    x->altura = 1 + max(obtenerAltura(x->izquierdo), obtenerAltura(x->derecho));
+    raiz->altura = 1 + max(obtenerAltura(raiz->izquierdo), obtenerAltura(raiz->derecho));
+
+    return x;
+}
+
 nodo* insertar(nodo* raiz, int valor)
 {
     if (raiz == nullptr)
@@ -34,8 +88,83 @@ nodo* insertar(nodo* raiz, int valor)
         raiz->derecho = insertar(raiz->derecho, valor);
     }
     //ojo con el else aca
+    raiz->altura = 1 + max(obtenerAltura(raiz->izquierdo), obtenerAltura(raiz->derecho));
+    int balance = obtenerBalance(raiz);
+
+    if (balance > 1 && valor < raiz->izquierdo->valor)
+    {
+        //caso ejemplo
+        //     10
+        //    /
+        //   8
+        //  /
+        // 7
+        return rotarDerecha(raiz);
+        //se debe devolver algo asi
+        //    8
+        //   / \
+        //  7   10
+    }
+    if (balance < -1 && valor > raiz->derecho->valor)
+    {
+        //caso ejemplo
+        //    10
+        //      \
+        //       12
+        //         \
+        //          15
+        return rotarIzquierda(raiz);
+        //se debe devolver algo asi
+        //    12
+        //   /  \
+        //  10  15
+    }
+    if (balance > 1 && valor > raiz->izquierdo->valor)
+    {
+        //caso ejemplo
+        //     10
+        //    /
+        //   7
+        //    \
+        //     8
+        raiz->izquierdo = rotarIzquierda(raiz->izquierdo);
+        //ahora quedaria asi
+        //     10
+        //    /
+        //   8
+        //  /
+        // 7
+        return rotarDerecha(raiz);
+        //se debe devolver algo asi
+        //    8
+        //   / \
+        //  7   10
+        
+    }
+    if (balance < -1 && valor < raiz->derecho->valor)
+    {
+        //caso ejemplo
+        //     10
+        //       \
+        //        12
+        //       / 
+        //     11    
+        raiz->derecho = rotarDerecha(raiz->derecho);
+        //deberia quedar asi
+        //     10
+        //       \
+        //        11
+        //          \
+        //           12
+        return rotarIzquierda(raiz);
+        //se debe devolver algo asi
+        //     11
+        //    /  \
+        //  10    12
+    }
     return raiz;
 }
+
 
 void inorden(nodo* raiz)
 {
@@ -47,15 +176,7 @@ void inorden(nodo* raiz)
     }
 }
 
-nodo* encontrarSucesor(nodo* raiz)
-{
-    nodo* sucesor = raiz->izquierdo;
-    while (sucesor != nullptr)
-    {
-        sucesor = sucesor->derecho;
-    }
-    return sucesor;
-}
+
 
 nodo* eliminar(nodo* raiz, int valor)
 {
