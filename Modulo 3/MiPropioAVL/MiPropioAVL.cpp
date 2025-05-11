@@ -30,14 +30,13 @@ int obtenerBalance(nodo* nodo)
     return nodo ? obtenerAltura(nodo->izquierdo) - obtenerAltura(nodo->derecho) : 0;
 }
 
-nodo* encontrarSucesor(nodo* raiz)
+nodo* encontrarPredecesor(nodo* raiz)
 {
-    nodo* sucesor = raiz->izquierdo;
-    while (sucesor != nullptr)
+    while (raiz->derecho)
     {
-        sucesor = sucesor->derecho;
+        raiz = raiz->derecho;
     }
-    return sucesor;
+    return raiz;
 }
 
 nodo* rotarDerecha(nodo* raiz)
@@ -181,8 +180,8 @@ void inorden(nodo* raiz)
 nodo* eliminar(nodo* raiz, int valor)
 {
     if (raiz == nullptr) return nullptr;
-    if (valor < raiz->valor) eliminar(raiz->izquierdo, valor);
-    if (valor > raiz->valor) eliminar(raiz->derecho, valor);
+    if (valor < raiz->valor) raiz->izquierdo = eliminar(raiz->izquierdo, valor);
+    if (valor > raiz->valor) raiz->derecho = eliminar(raiz->derecho, valor);
 
     //caso que uno de sus hijos este vacio
     if (raiz->izquierdo == nullptr)
@@ -205,14 +204,48 @@ nodo* eliminar(nodo* raiz, int valor)
     }
     else
     {
-        //busco a mi sucesor (de los menores (izquierda), el mas grande(derecha) (el mayor del subarbol izquierdo))
-        nodo* sucesor = encontrarSucesor(raiz);
-        //mi raiz (apuntado a ser borrado) copiara el valor de su sucesor, siendo "eliminado". Mas bien reemplazado.
-        raiz->valor = sucesor->valor;
-        //por ultimo ahora debo eliminar al nodo que era sucesor ya que ahora su valor esta en raiz pero tambien en el subarbol izquierdo.
-        //hago una llamada recursiva ya que la funcion cubre
-        //caso en el que tenga un hijo, dos hijos o ninguno
-        eliminar(raiz->izquierdo, sucesor->valor);
+        //busco el predecesor
+        //numero mas grande del lado izquierdo, o sea de los chicos el mas grande 
+        nodo* predecesor = encontrarPredecesor(raiz->izquierdo);
+        //su valor lo copio en la raiz, sobreescribiendo la raiz y perdiendo el valor que queria borrar
+        raiz->valor = predecesor->valor;
+        //ahora el valor del predecesor esta en su lugar original y en la raiz
+        //por eso elimino la version original para preservar un set de datos sin duplicidad
+        raiz->izquierdo = eliminar(raiz->izquierdo, predecesor->valor);
+    }
+
+    raiz->altura = 1 + max(obtenerAltura(raiz->izquierdo), obtenerAltura(raiz->derecho));
+    int balance = obtenerBalance(raiz);
+    //balance mayor a 1 significa desbalance de la raiz a la izquierda y si el balance de raiz->izquierdo
+    //es mayor igual a 0 significa que esta balanceado o desbalanceado en el subarbol izquierdo
+    if (balance > 1 && obtenerBalance(raiz->izquierdo) >= 0)
+    {
+        return rotarDerecha(raiz);
+    }
+    //balance mayor a 1 significa desbalance de la raiz a a la izquierda
+    //si balance de raiz->izuierdo es menor o igual a 0 el subarbol derecho de raiz->izquierdo
+    //esta desbalanceado
+
+    if (balance > 1 && obtenerBalance(raiz->izquierdo) <= 0)
+    {
+        raiz->izquierdo = rotarIzquierda(raiz->izquierdo);
+        return rotarDerecha(raiz);
+    }
+    //balance menor a -1 significa desbalance de la raiz a la derecha
+    //si el balance de la raiz derecho es mayor o igual a 0
+    // el desbalance ocurre en raiz->derecha->izquierda
+    if (balance < -1 && obtenerBalance(raiz->derecho) >= 0)
+    {
+        //error aca
+        raiz->derecho = rotarDerecha(raiz->derecho);
+        return rotarIzquierda(raiz);
+    }
+    //balance menor a -1 significa desbalance del lado derecho de la raiz
+    //si el balance de la raiz derecho es menor o igual a 0
+    // el desbalance ocurre en raiz->derecha->derecha
+    if (balance < -1 && obtenerBalance(raiz->derecho) <= 0)
+    {
+        return rotarIzquierda(raiz);
     }
 
     return raiz;
@@ -226,6 +259,10 @@ int main()
     raiz = insertar(raiz, 13);
     raiz = insertar(raiz, 220);
     raiz = insertar(raiz, 114);
-
+    cout << "Demostracion previa\n";
+    inorden(raiz);
+    cout << "\n-----------------------------\n";
+    cout << "Post Eliminacion. Deberia seguir ordenado e internamente balanceado\n";
+    raiz = eliminar(raiz, 100);
     inorden(raiz);
 }

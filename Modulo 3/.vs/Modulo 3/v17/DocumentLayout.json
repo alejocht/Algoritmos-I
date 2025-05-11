@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|solutionrelative:MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{177D6ED1-C173-405C-81F0-9A2C7FB66444}|ArbolRojoNegro\\ArbolRojoNegro.vcxproj|E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\ArbolRojoNegro\\ArbolRojoNegro.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{177D6ED1-C173-405C-81F0-9A2C7FB66444}|ArbolRojoNegro\\ArbolRojoNegro.vcxproj|solutionrelative:ArbolRojoNegro\\ArbolRojoNegro.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE574970-9F90-456F-AB65-13B5374ECC97}|Actividad5\\Actividad5.vcxproj|E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\Actividad5\\Actividad5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FE574970-9F90-456F-AB65-13B5374ECC97}|Actividad5\\Actividad5.vcxproj|solutionrelative:Actividad5\\Actividad5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3C7B81F0-3475-431D-BE84-74F4F5392C7E}|MiPropioAVL\\MiPropioAVL.vcxproj|solutionrelative:MiPropioAVL\\MiPropioAVL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +27,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MiPropioAVL.cpp",
-              "DocumentMoniker": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
-              "RelativeDocumentMoniker": "MiPropioAVL\\MiPropioAVL.cpp",
-              "ToolTip": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
-              "RelativeToolTip": "MiPropioAVL\\MiPropioAVL.cpp",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAmwJMAAAASAAAA",
+              "Title": "ArbolRojoNegro.cpp",
+              "DocumentMoniker": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\ArbolRojoNegro\\ArbolRojoNegro.cpp",
+              "RelativeDocumentMoniker": "ArbolRojoNegro\\ArbolRojoNegro.cpp",
+              "ToolTip": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\ArbolRojoNegro\\ArbolRojoNegro.cpp",
+              "RelativeToolTip": "ArbolRojoNegro\\ArbolRojoNegro.cpp",
+              "ViewState": "AQIAACUAAAAAAAAAAAAqwDgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T03:19:34.965Z",
+              "WhenOpened": "2025-05-11T20:44:57.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Actividad5.cpp",
-              "DocumentMoniker": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\Actividad5\\Actividad5.cpp",
-              "RelativeDocumentMoniker": "Actividad5\\Actividad5.cpp",
-              "ToolTip": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\Actividad5\\Actividad5.cpp",
-              "RelativeToolTip": "Actividad5\\Actividad5.cpp",
-              "ViewState": "AQIAAKoAAAAAAAAAAAAAAEAAAAAfAAAA",
+              "Title": "MiPropioAVL.cpp",
+              "DocumentMoniker": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
+              "RelativeDocumentMoniker": "MiPropioAVL\\MiPropioAVL.cpp",
+              "ToolTip": "E:\\Algoritmos I\\AlgoritmosUBP\\Modulos\\Modulo 3\\MiPropioAVL\\MiPropioAVL.cpp",
+              "RelativeToolTip": "MiPropioAVL\\MiPropioAVL.cpp",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAYwAkBAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-04T22:18:19.771Z"
+              "WhenOpened": "2025-05-08T03:19:34.965Z",
+              "EditorCaption": ""
             }
           ]
         }
